@@ -25,10 +25,10 @@
   font-family: 'montserrat', sans-serif;
 }
 
-.create-todo button[class="button1"]  :hover {
+.create-todo button[class="button1"]:hover {
   opacity: 0.75;
 }
-.create-todo button[class="button1"]{
+.create-todo button[class="button1"] {
   display: block;
   width: 10%;
   font-size: 1.125rem;
@@ -188,41 +188,23 @@ input:checked ~ .bubble::after {
   margin-bottom: 0.5rem;
 }
 
-.create-todo input[type="submit"] {
-  display: block;
-  width: 5%;
-  font-size: 1.125rem;
-  padding: 1rem 1.5rem;
-  color: #FFF;
-  font-weight: 700;
-  text-transform: uppercase;
-  background-color: var(--create);
-  box-shadow: var(--personal-glow);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: 0.2s ease-out;
-}
-
-.create-todo input[type="submit"]:hover {
-  opacity: 0.75;
-}
-
 .todo-list .list {
   margin: 1rem 0;
   display: flex;
   overflow-x: auto;
-  height: calc(68vh - 150px); 
+  height: calc(100vh - 150px);
 }
 
 @media (max-width: 768px) {
   .todo-list .list {
-    height: calc(68vh - 100px);
+    height: calc(100vh - 100px);
   }
 }
 
-@media (max-width: 480px) {    /* Ekrana göre ayar */
+@media (max-width: 480px) {
+  /* Ekrana göre ayar */
   .todo-list .list {
-    height: calc(68vh - 50px);
+    height: calc(100vh - 50px);
   }
 }
 
@@ -267,6 +249,7 @@ input:checked ~ .bubble::after {
 
 .todo-item label {
   flex: 1;
+  font-size: 20px;
   margin-right: 1rem;
   cursor: pointer;
   word-wrap: break-word;
@@ -275,13 +258,14 @@ input:checked ~ .bubble::after {
 .todo-item .actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 
 .todo-item .actions button {
   display: block;
   padding: 0.5rem;
-  border-radius: 0.25rem;
+  border-radius: 10rem;
   color: #FFF;
   cursor: pointer;
   transition: 0.2s ease-in-out;
@@ -293,11 +277,12 @@ input:checked ~ .bubble::after {
 
 .todo-item .actions .edit {
   margin-right: 0.5rem;
-  background-color: #357dcf;
+  background-color: #ffffff;
 }
 
 .todo-item .actions .delete {
-  background-color: #FF0800;
+  margin-right: 0.5rem;
+  background-color: #ffffff;
 }
 
 .todo-item.done .todo-content input {

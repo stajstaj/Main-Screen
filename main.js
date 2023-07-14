@@ -1,8 +1,4 @@
 var input = document.getElementById("new-todo-form");
-
-// Execute a function when the user presses a key on the keyboard 
-
-
 document.addEventListener("keyup", function(event) {
   if (event.key === "Enter") {
     // Cancel the default action, if needed
@@ -16,6 +12,7 @@ document.addEventListener("keyup", function(event) {
     
   }
 });
+
 
 document.getElementById("new-todo-form").addEventListener("submit", function (e) {
   e.preventDefault(); // Prevent form submission
@@ -34,7 +31,7 @@ document.getElementById("new-todo-form").addEventListener("submit", function (e)
   }
 
   if (content.trim() === "" || category === "") {
-    return; // text veya kategori seçimi yapılmadıysa todo'ya ekleme
+    return; // If content or category is empty, do not add the todo
   }
 
   let columnId = "";
@@ -51,8 +48,6 @@ document.getElementById("new-todo-form").addEventListener("submit", function (e)
     default:
       return; // Invalid category
   }
-
-
 
   const column = document.getElementById(columnId);
 
@@ -72,13 +67,19 @@ document.getElementById("new-todo-form").addEventListener("submit", function (e)
   // Create the edit button
   const editButton = document.createElement("button");
   editButton.className = "edit";
-  editButton.innerText = "Düzenle";
+  const editIcon = document.createElement("img");
+  editIcon.src = "edit.png";
+  editIcon.alt = "Edit";
+  editButton.appendChild(editIcon);
   actions.appendChild(editButton);
 
   // Create the delete button
   const deleteButton = document.createElement("button");
   deleteButton.className = "delete";
-  deleteButton.innerText = "Sil";
+  const deleteIcon = document.createElement("img");
+  deleteIcon.src = "delete.png";
+  deleteIcon.alt = "Delete";
+  deleteButton.appendChild(deleteIcon);
   actions.appendChild(deleteButton);
 
   todoItem.appendChild(actions);
@@ -92,8 +93,3 @@ document.getElementById("new-todo-form").addEventListener("submit", function (e)
     categoryInputs[i].checked = false;
   }
 });
-
-
-
-
-
